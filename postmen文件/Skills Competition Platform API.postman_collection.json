@@ -1,0 +1,1384 @@
+{
+	"info": {
+		"_postman_id": "60e6a5af-76a6-41f3-98e8-54db370c4f8e",
+		"name": "Skills Competition Platform API",
+		"description": "API collection for the Skills Competition Platform.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin API",
+			"item": [
+				{
+					"name": "Get Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/statistics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"statistics"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Statistics Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/statistics",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"statistics"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalSubmissions\": 100,\n    \"totalUsers\": 50,\n    \"totalCompetitions\": 5,\n    \"totalReviews\": 20\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Users Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": 1,\n        \"username\": \"admin\",\n        \"role\": \"admin\",\n        \"name\": \"Admin User\",\n        \"contactInfo\": \"admin@example.com\"\n    },\n    {\n        \"userId\": 2,\n        \"username\": \"teacher1\",\n        \"role\": \"teacher\",\n        \"name\": \"Teacher One\",\n        \"contactInfo\": \"teacher1@example.com\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get All Registrations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/registrations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"registrations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Registrations Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/registrations",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"registrations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": 1,\n        \"username\": \"newuser\",\n        \"name\": \"New User\",\n        \"contactInfo\": \"contact@example.com\",\n        \"role\": \"teacher\",\n        \"status\": \"pending\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Approve Registration",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"approved\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/registrations/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"registrations",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Approve Registration Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"approved\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/admin/registrations/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"registrations",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"User registration approved\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create Competition",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"competitionName\": \"New Competition\",\n    \"description\": \"Competition Description\",\n    \"competitionDate\": \"2024-07-01\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/competitions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"competitions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Competition Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"competitionName\": \"New Competition\",\n    \"description\": \"Competition Description\",\n    \"competitionDate\": \"2024-07-01\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/admin/competitions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"competitions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Competition created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Competition",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"competitionName\": \"Updated Competition\",\n    \"description\": \"Updated Description\",\n    \"competitionDate\": \"2024-07-02\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admin/competitions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"competitions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Competition Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"competitionName\": \"Updated Competition\",\n    \"description\": \"Updated Description\",\n    \"competitionDate\": \"2024-07-02\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/admin/competitions/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"competitions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Competition updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Competition",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/competitions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"competitions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Competition Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/competitions/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"competitions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Competition deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Submissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/submissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"submissions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Submissions Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/submissions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"submissions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"submissionId\": 1,\n        \"submissionName\": \"Submission 1\",\n        \"category\": \"\\u601d\\u653f\\u8bfe\\u7a0b\\u7ec4\",\n        \"school\": \"School 1\",\n        \"team\": \"Team 1\",\n        \"materialPath\": \"/path/to/material\",\n        \"submissionDate\": \"2024-07-01T12:00:00Z\",\n        \"userId\": 1,\n        \"competitionId\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete Submission",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/submissions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"submissions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Submission Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/submissions/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"submissions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Submission deleted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Reviews Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/reviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"reviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"reviewId\": 1,\n        \"submissionId\": 1,\n        \"expertId\": 2,\n        \"score\": 95,\n        \"comment\": \"Great submission\",\n        \"reviewDate\": \"2024-07-01T12:00:00Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get All Logs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admin/logs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admin",
+								"logs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Logs Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/admin/logs",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"admin",
+										"logs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"logId\": 1,\n        \"userId\": 1,\n        \"operation\": \"User login\",\n        \"operationDate\": \"2024-07-01T12:00:00Z\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"newuser\",\n    \"password\": \"password123\",\n    \"role\": \"teacher\",\n    \"name\": \"New User\",\n    \"contactInfo\": \"contact@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register User Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"newuser\",\n    \"password\": \"password123\",\n    \"role\": \"teacher\",\n    \"name\": \"New User\",\n    \"contactInfo\": \"contact@example.com\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Registration successful, waiting for approval\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"user1\",\n    \"password\": \"password123\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"token\": \"jwt-token-string\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user1\",\n    \"oldPassword\": \"oldpassword123\",\n    \"newPassword\": \"newpassword123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change Password Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"user1\",\n    \"oldPassword\": \"oldpassword123\",\n    \"newPassword\": \"newpassword123\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/auth/change-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"auth",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"message\": \"Password changed successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Teacher API",
+			"item": [
+				{
+					"name": "Submit Submission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"submissionName\": \"New Submission\",\n    \"category\": \"\\u601d\\u653f\\u8bfe\\u7a0b\\u7ec4\",\n    \"school\": \"School 1\",\n    \"team\": \"Team 1\",\n    \"materialPath\": \"/path/to/material\",\n    \"userId\": 1,\n    \"competitionId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/submissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"submissions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Submit Submission Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"submissionName\": \"New Submission\",\n    \"category\": \"\\u601d\\u653f\\u8bfe\\u7a0b\\u7ec4\",\n    \"school\": \"School 1\",\n    \"team\": \"Team 1\",\n    \"materialPath\": \"/path/to/material\",\n    \"userId\": 1,\n    \"competitionId\": 1\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/submissions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"submissions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Submission created successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Submissions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/submissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"submissions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Submissions Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/submissions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"submissions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"submissionId\": 1,\n        \"submissionName\": \"Submission 1\",\n        \"category\": \"\\u601d\\u653f\\u8bfe\\u7a0b\\u7ec4\",\n        \"school\": \"School 1\",\n        \"team\": \"Team 1\",\n        \"materialPath\": \"/path/to/material\",\n        \"submissionDate\": \"2024-07-01T12:00:00Z\",\n        \"userId\": 1,\n        \"competitionId\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Update Submission",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"submissionName\": \"Updated Submission\",\n    \"category\": \"\\u601d\\u653f\\u8bfe\\u7a0b\\u7ec4\",\n    \"school\": \"Updated School\",\n    \"team\": \"Updated Team\",\n    \"materialPath\": \"/path/to/new/material\",\n    \"userId\": 1,\n    \"competitionId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/submissions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"submissions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Submission Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"submissionName\": \"Updated Submission\",\n    \"category\": \"\\u601d\\u653f\\u8bfe\\u7a0b\\u7ec4\",\n    \"school\": \"Updated School\",\n    \"team\": \"Updated Team\",\n    \"materialPath\": \"/path/to/new/material\",\n    \"userId\": 1,\n    \"competitionId\": 1\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/submissions/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"submissions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Submission updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Submission",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/submissions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"submissions",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Submission Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/submissions/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"submissions",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Submission deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Expert API",
+			"item": [
+				{
+					"name": "Get All Submissions (Expert)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/expert/submissions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expert",
+								"submissions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Submissions (Expert) Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/expert/submissions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expert",
+										"submissions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"submissionId\": 1,\n        \"submissionName\": \"Submission 1\",\n        \"category\": \"\\u601d\\u653f\\u8bfe\\u7a0b\\u7ec4\",\n        \"school\": \"School 1\",\n        \"team\": \"Team 1\",\n        \"materialPath\": \"/path/to/material\",\n        \"submissionDate\": \"2024-07-01T12:00:00Z\",\n        \"userId\": 1,\n        \"competitionId\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Submit Review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"submissionId\": 1,\n    \"expertId\": 2,\n    \"score\": 95,\n    \"comment\": \"Great submission\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/expert/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expert",
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Submit Review Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"submissionId\": 1,\n    \"expertId\": 2,\n    \"score\": 95,\n    \"comment\": \"Great submission\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/expert/reviews",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expert",
+										"reviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review submitted successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Review",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"score\": 98,\n    \"comment\": \"Updated comment\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/expert/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expert",
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Review Response",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"score\": 98,\n    \"comment\": \"Updated comment\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/expert/reviews/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expert",
+										"reviews",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Review",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/expert/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"expert",
+								"reviews",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Review Response",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/expert/reviews/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"expert",
+										"reviews",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Review deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
